@@ -1,0 +1,53 @@
+body {
+  background: #858c99;
+}
+h1 {
+	font-family: 'Pacifico', cursive;
+}
+.rondeBlanche {
+position: relative;
+display: inline-block;
+height: 100px;
+width: 100px;
+border-radius: 100%;
+border: 2px solid black;
+margin: 20px;
+margin-top: 5px;
+}
+.arc-en-ciel {
+  -moz-box-shadow: 2px 2px 5px 1px red, 4px 4px 5px 4px orange, 6px 6px 5px 4px yellow, 8px 8px 5px 4px green,10px 10px 5px 4px blue, 12px 12px 5px 4px indigo,
+  14px 14px 5px 4px violet;
+-webkit-box-shadow: 2px 2px 5px 1px red, 4px 4px 5px 4px orange, 6px 6px 5px 4px yellow, 8px 8px 5px 4px green,10px 10px 5px 4px blue, 12px 12px 5px 4px indigo,
+14px 14px 5px 4px violet;
+box-shadow: 2px 2px 5px 1px red, 4px 4px 5px 4px orange, 6px 6px 5px 4px yellow, 8px 8px 5px 4px green,10px 10px 5px 4px blue, 12px 12px 5px 4px indigo,
+14px 14px 5px 4px violet;
+}
+.ronde {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  height: 500px;
+  width: 500px;
+  border-radius: 100%;
+  border: 2px solid black;
+  margin-left: 5px;
+  margin-top: 5px;
+  justify-content:center;
+}
+.chat {
+  background-image: url(chat.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.milieu {
+  margin-top: 250px;
+  font-size: 20px
+}
+.imageSocial {
+width: 500px;
+}
+.social {
+  width: 620px;
+  text-align: center;
+}
