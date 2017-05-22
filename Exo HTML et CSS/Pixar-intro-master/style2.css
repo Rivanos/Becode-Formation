@@ -1,0 +1,90 @@
+.container2 {
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	animation: Lamp 4s linear forwards;
+}
+
+.container {
+	animation: LampJump 4s 5s linear forwards;
+}
+
+.image {
+	height: 10em;
+	width: 10em;
+	/*background-image: url(pixarlamp.png);*/
+	background-size: cover;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+}
+
+img {
+	max-height: 10em;
+	max-width: 10em;
+}
+
+.wrapper {
+	margin-top: 10em;
+	text-align: center;
+	position: relative;
+}
+
+
+.pixar {
+	left: 0;
+	right: 0;
+	display: inline-block;
+	font-size: 150px;
+	position: absolute;
+	z-index: -1;
+}
+
+b {
+	animation: I 4s 5s linear forwards;
+}
+
+@keyframes Lamp {
+	0% {transform: translateX(800px) translateY(-30px);}
+	8.33% {transform: translateX(739px) translateY(30px);}
+	16.66% {transform: translateX(678px) translateY(-30px);}
+	25% {transform: translateX(617px) translateY(30px);}
+	33.33% {transform: translateX(556px) translateY(-30px);}
+	41.66% {transform: translateX(495px) translateY(30px);}
+	50% {transform: translateX(435px) translateY(-30px);}
+	58.33% {transform: translateX(374px) translateY(30px);}
+	66.66% {transform: translateX(313px) translateY(-30px);}
+	75% {transform: translateX(252px) translateY(30px);}
+	83.33% {transform: translateX(191px) translateY(-30px);}
+	91.66% {transform: translateX(130px) translateY(30px);}					
+	100% {transform: translateX(70px);}
+}
+
+@keyframes LampJump {
+	0% {transform: translateX(70px);}
+	10% {transform: translateX(78px) translateY(-160px);}
+	20% {transform: translateX(78px) translateY(-100px);}
+	30% {transform: translateX(78px) translateY(-160px);}
+	40% {transform: translateX(78px) translateY(-100px);}
+	50% {transform: translateX(78px) translateY(-160px);}
+	60% {transform: translateX(78px) translateY(-90px);}
+	70% {transform: translateX(78px) translateY(-160px);}
+	80% {transform: translateX(78px) translateY(-80px);}
+	90% {transform: translateX(78px) translateY(-200px);}
+	100% {transform: translateX(73px) translateY(-30px);}
+}
+
+@keyframes I {
+	0% {font-size: 150px}
+	10% {font-size: 150px}
+	20% {font-size: 120px}
+	30% {font-size: 150px}
+	40% {font-size: 120px}
+	50% {font-size: 150px}
+	60% {font-size: 110px}
+	70% {font-size: 140px}
+	80% {font-size: 100px}
+	90% {font-size: 130px}
+	100% {font-size: 0px}
+}
+
