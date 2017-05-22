@@ -1,0 +1,23 @@
+table, td, tr {
+  border: 1px solid black;
+}
+i {
+  padding-right: 6px;
+  color: rgb(222, 50, 44);
+}
+caption {
+  text-align: left;
+}
+table {
+}
+.center {
+  text-align: center;
+}
+.année {
+  padding-top: -30px;
+  width: 150px;
+  padding-left: 100px;
+}
+.txt {
+  padding-top: -20px;
+}
