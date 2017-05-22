@@ -1,0 +1,101 @@
+@media all and (max-width: 1024px) {
+  section {
+    flex-direction: column;
+  }
+  article, aside {
+    width: auto;
+    margin-bottom: 15px;
+  }
+  #fleche_bulle {
+  top: 100px;
+  left: -12px;
+  }
+  #photo_zozor img {
+    width: 110px;
+    float: right;
+    margin-left: 15px;
+  }
+  aside p:last-child {
+    text-align: center;
+  }
+  #banniere_image {
+    display: none;
+  }
+  nav {
+    width: auto;
+    text-align: left;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav li {
+    padding-left: 4px;
+  }
+  nav a {
+    font-size: 1.1em;
+  }
+  nav a:hover {
+    border-bottom: 0;
+  }
+  #bloc_page {
+    width: auto;
+  }
+}
+
+@media all and (max-width: 600px) {
+  section {
+    flex-direction: column;
+  }
+  article, aside {
+    width: auto;
+    margin-bottom: 15px;
+  }
+  #fleche_bulle {
+    animation: 3s fleche linear;
+    top: 100px;
+    left: -12px;
+  }
+  #photo_zozor img {
+    width: 110px;
+    float: right;
+    margin-left: 15px;
+  }
+  aside p:last-child {
+    text-align: center;
+  }
+  #banniere_image {
+    display: none;
+  }
+  nav {
+    width: auto;
+    text-align: left;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav li {
+    padding-left: 4px;
+  }
+  nav a {
+    font-size: 1.1em;
+  }
+  nav a:hover {
+    border-bottom: 0;
+  }
+  #bloc_page {
+    width: auto;
+  }
+  aside {
+    animation: 3s bounce linear;
+  }
+  @keyframes bounce {
+    0%, 20%, 100% {bottom: 5px}
+    50%, 80% {bottom:-55px}
+    }
+    @keyframes fleche {
+      0% {top: 100px; left: -12px}
+      50 {top: -10px; left: -12px; transform: rotate(90deg)}
+      100% {left: 100px; top: -10px}
+    }
+  }
+}
