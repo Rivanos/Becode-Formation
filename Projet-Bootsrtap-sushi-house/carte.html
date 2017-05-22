@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="Images/favicon.png" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Sushi house</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="Images/Logo.png" alt="Logo Resto Party" height="30px">
+        </a>
+      </div>
+      <div id="navbar3" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="photo.html">Photos</a></li>
+          <li class="active"><a href="carte.html">Itinéraire</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="jumbotron jumbotron-fluid fond">
+    <div class="container push-spaces">
+      <h1 class="display-3">Sushi house</h1>
+      <p class="lead">Le sushi sous toutes ses formes</p>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-ls-6 map espace">
+        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+        <div style='overflow:hidden;height:440px;width:100%;'>
+          <div id='gmap_canvas' style='height:440px;width:500px;'></div>
+          <div><small><a href="http://embedgooglemaps.com">embed google maps</a></small></div>
+          <div><small><a href="http://couponcode.ng/etihad-airways/">You can save up to 15% off at Etihad airways by using these Promo codes</a></small></div>
+          <style>
+            #gmap_canvas img {
+              max-width: none!important;
+              background: none!important
+            }
+          </style>
+        </div>
+        <script type='text/javascript'>
+          function init_map() {
+            var myOptions = {
+              zoom: 12,
+              center: new google.maps.LatLng(50.8450658, 4.3452608000000055),
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+            marker = new google.maps.Marker({
+              map: map,
+              position: new google.maps.LatLng(50.8450658, 4.3452608000000055)
+            });
+            infowindow = new google.maps.InfoWindow({
+              content: '<strong>sushi house</strong><br>rue de la vierge 10-24 bruxelles Belgique<br>'
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.open(map, marker);
+            });
+            infowindow.open(map, marker);
+          }
+          google.maps.event.addDomListener(window, 'load', init_map);
+        </script>
+      </div>
+      <div class="col-md-6 col-xs-12 col-sm-6 col-ls-6 espace">
+        <div class="panel panel-default">
+          <div class="panel-heading">Horaires</div>
+          <div class="panel-body">ouvert de 11h à 23h tous les jours sauf le vendredi de 11h à 01h</div>
+          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="boite">
+      <a href='#'><i class="fa fa-twitch fa-3x fa-fw"></i></a>
+      <a href='#'><i class="fa fa-facebook fa-3x fa-fw"></i></a>
+      <a href='#'><i class="fa fa-twitter fa-3x fa-fw"></i></a>
+      <a href='#'><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
+      <a href='#'><i class="fa fa-rss fa-3x fa-fw"></i></a>
+      <a href='#'><i class="fa fa-vine fa-3x fa-fw"></i></a>
+      <a href='#'><i class="fa fa-flickr fa-3x fa-fw"></i></a>
+      <a href='#'><i class="fa fa-linkedin fa-3x fa-fw"></i></a>
+      </span>
+    </div>
+  </div>
+
+</body>
+
+</html>

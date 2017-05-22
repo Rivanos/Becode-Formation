@@ -1,0 +1,158 @@
+.jumbotron {
+  background-color: white;
+  margin-bottom: 0px;
+  background-image: url(Images/sushi.jpg);
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+}
+@media screen and (max-width: 1000px) {
+  .jumbotron {
+    background-size: contain;
+  }
+}
+@media screen and (max-width: 600px) {
+  .jumbotron {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .slideshow, .map {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .jumbotron form, .jumbotron p {
+    display: none;
+  }
+}
+.btn {
+  background-color: rgba(138, 138, 138, 0.55)
+}
+
+.btn:hover {
+  background-color: rgba(27, 31, 30, 0.56);
+}
+
+.push-spaces {
+  height: 500px;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+}
+
+.espace {
+  padding-top: 30px;
+}
+
+.bordered {
+  box-shadow: 10px 10px 5px #888888;
+  margin: 0 auto;
+  width: 500px;
+  height: auto;
+  border: 1px solid black;
+  padding-bottom: 15px;
+}
+
+.bordered img {
+  width: 468px;
+  height: 332.8px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background-color: #111;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.boite {
+  margin-top: 50px;
+  color: #fff;
+  width: 100%;
+}
+
+.fa-twitter {
+  color: #4099FF;
+}
+
+.fa-facebook {
+  color: #3B5998;
+}
+
+.fa-youtube-play {
+  color: #e52d27;
+}
+
+.fa-rss {
+  color: #FF6600;
+}
+
+.fa-vine {
+  color: #00a478;
+}
+
+.fa-flickr {
+  color: #ff0084;
+}
+
+.fa-twitch {
+  color: #6441A5;
+}
+
+.fa-linkedin {
+  color: #007bb6;
+}
+
+.fa {
+  padding-top: 50px;
+  opacity: 0.5;
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+
+.item img {
+  padding: 0 auto;
+}
+
+.fa:hover {
+  opacity: 3;
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+
+.fond p, .fond h1 {
+  color: rgb(0, 0, 0);
+}
+
+.fond p {
+  font-size: 40px;
+  font-family: 'Pacifico', cursive;
+}
+
+.fond h1 {
+  font-size: 60px;
+  font-family: 'Pacifico', cursive;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+div .active {
+  animation-duration: 2s;
+  animation-timing-function: linear;
+}
+
+.carousel-inner>.item {}

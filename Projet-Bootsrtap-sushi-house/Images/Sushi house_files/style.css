@@ -1,0 +1,155 @@
+body {
+  font-family: 'Pacifico', cursive;
+}
+.fond {
+  text-align: center;
+  background-image: url(Images/sushi.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 88vh;
+}
+.bordered {
+  box-shadow: 10px 10px 5px #888888;
+  margin: 0 auto;
+  width: 460px;
+  height: auto;
+  border: 1px solid black;
+}
+.item, .active {
+  width: auto;
+  height: auto;
+}
+form {
+  width: 400px;
+  /* Pour voir les limites du formulaire */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+div + div {
+  margin-top: 1em;
+}
+
+label {
+  /* Afin de s'assurer que toutes les étiquettes aient la même dimension et soient alignées correctement */
+  display: inline-block;
+  width: 60px;
+  text-align: right;
+}
+
+input, textarea {
+  /* Afin de s'assurer que tous les champs textuels utilisent la même police
+     Par défaut, textarea utilise une police à espacement constant */
+  font: 1em sans-serif;
+
+  /* Pour donner la même dimension à tous les champs textuels */
+  width: 300px;
+
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+
+  /* Pour harmoniser l'apparence des bordures des champs textuels */
+  border: 1px solid #999;
+
+}
+select, input, button {
+  margin-top: 4px;
+}
+
+input:focus, textarea:focus {
+  /* Afin de réhausser les éléments actifs */
+  border-color: #000;
+}
+
+textarea {
+  /* Pour aligner correctement les champs multilignes et leurs étiquettes */
+  vertical-align: top;
+
+  /* Pour donner assez d'espace pour entrer du texte */
+  height: 5em;
+
+  /* Pour permettre aux utilisateurs de redimensionner un champ textuel horizontalement
+     Cela ne marche pas avec tous les navigateurs  */
+  resize: vertical;
+}
+
+.button {
+  /* Pour positionner les boutons de la même manière que les champs textuels */
+  padding-left: 90px; /* même dimension que les étiquettes */
+}
+
+button {
+  /* Cette marge représente approximativement le même espace
+     que celui entre les étiquettes et les champs textuels */
+  margin-left: .5em;
+}
+select {
+  padding-left: 0px;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 150px;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background-color: #111;
+  text-align: center;
+}
+
+.boite {
+  margin-top: 50px;
+  color: #fff;
+  width: 100%;
+}
+
+.fa-twitter {
+  color: #4099FF;
+}
+
+.fa-facebook {
+  color: #3B5998;
+}
+
+.fa-youtube-play {
+  color: #e52d27;
+}
+
+.fa-rss {
+  color: #FF6600;
+}
+
+.fa-vine {
+  color: #00a478;
+}
+
+.fa-flickr {
+  color: #ff0084;
+}
+
+.fa-twitch {
+  color: #6441A5;
+}
+
+.fa-linkedin {
+  color: #007bb6;
+}
+
+.fa {
+  padding-top: 50px;
+  opacity: 0.7;
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+
+.fa:hover{
+  opacity: 1;
+  transition: 1s;
+  -webkit-transition: 1s;
