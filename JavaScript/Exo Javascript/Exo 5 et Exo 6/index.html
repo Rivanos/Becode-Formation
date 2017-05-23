@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercice_5</title>
+        <meta charset="UTF-8">
+        <script>
+          function myFunction() {
+            var chaton = document.getElementById("premiernombre").value;
+            var chatone = document.getElementById("deuxiemenombre").value;
+            //document.write(nom);
+            //document.write(prenom);
+            //document.write(ville);
+            alert(parseInt(chaton)+parseFloat(chatone));
+          }
+        </script>
+        <script src="js.js"></script>
+    </head>
+    <body>
+        <form>
+            <label for="premier_nombre">Premier nombre : </label><input type="text" id="premiernombre" name="premier_nombre"/><br/>
+            <label for="deuxieme_nombre">Deuxième nombre : </label><input type="text" id="deuxiemenombre" name="deuxieme_nombre"/><br/>
+            <button onClick="myFunction();" id="valider" name ="valider">Valider</button>
+        </form>
+    </body>
+</html>
