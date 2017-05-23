@@ -1,0 +1,1 @@
+alert(chaton % chaton1);
