@@ -51,7 +51,7 @@
     <div class="row">
       <div class="col-md-6 col-xs-6 col-sm-6 col-ls-6">
         <h2>Formulaire de plainte</h3>
-          <form action="/action_page.php">
+          <form>
             <div class="form-group text-left">
               <label for="nom">Nom:</label>
               <input type="nom" class="form-control" id="nom" placeholder="Votre nom" name="nom">
@@ -68,7 +68,7 @@
                       <option value="4">Pk des rouleaux de printemps</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-default">Envoyé &nbsp; <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+            <button onClick="myFunction();" type="submit" class="btn btn-default">Envoyé &nbsp; <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
 
           </form>
         </div>
@@ -96,7 +96,22 @@
       </span>
     </div>
   </div>
+  <script type="text/javascript">
+  function myFunction() {
+    var name = document.getElementById("nom").value;
+    var pname = document.getElementById("prénom").value;
+
+    var result = confirm("Votre nom est bien "+name+" ?"+"\nVotre Prénom est bien "+pname+" ?");
+      if (result == true){
+        alert("Votre plainte est bien envoyé");
+      }
+      else {
+        window.reload();
+      }
+  }
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </html>
