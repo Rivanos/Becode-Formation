@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="jourDeLaSemaine();" type="button" name="button">Cliquez pour savoir le jour de la semaine!</button>
+  <script type="text/javascript">
+  function jourDeLaSemaine(){
+  var ladate=new Date()
+  var tab_jour=new Array("Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
+  alert("Nous sommes un "+tab_jour[ladate.getDay()])
+}
+  </script>
+</body>
+</html>

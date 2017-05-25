@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="faireChoix();" type="button" name="button">Clique ici!</button>
+  <script type="text/javascript">
+    function faireChoix() {
+      var _choix = prompt("Choisser un nombre entre 1 et 3.");
+      if (_choix == 1) {
+        alert("Merci");
+      }
+      else if (_choix == 2) {
+        alert("Bonjour");
+      }
+      else if (_choix == 3) {
+        alert("Au revoir");
+      }
+      else {
+        alert("Pardon, que voulez-vous ?");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

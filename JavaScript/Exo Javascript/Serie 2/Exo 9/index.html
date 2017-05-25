@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="testWhile();" type="button" name="button">Cliquez pour savoir le jour de la semaine!</button>
+  <script type="text/javascript">
+    function testWhile() {
+      var q = prompt("écrivez quelque chose avec la lettre p");
+      while ((q.indexOf("p")) < 0) {
+        var q = prompt("écrivez quelque chose avec la lettre p");
+      }
+      alert(q);
+    }
+  </script>
+</body>
+
+</html>
