@@ -11,11 +11,14 @@
 <body>
   <button onclick="calculMoyenne();" type="button" name="button">Clique</button>
   <script type="text/javascript">
-    function calculMoyenne() {
-      var _q = prompt("Veuillez entrer un nombre entier");
-      while ((_q) == parseInt(_q))
-        var _q = prompt("Veuillez entrer un nombre entier");
-         }
+  function calculMoyenne() {
+    var somme = 0;
+    for (var i = 0, j = arguments.length; i < j; i++) {
+      somme += arguments[i];
+    }
+    return somme / arguments.length;
+  }
+  alert(calculMoyenne(2,3,5,8));
   </script>
 </body>
 
