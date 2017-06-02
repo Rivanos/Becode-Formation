@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="choixOrdi();" type="button" name="button">Choix ordi</button>
+
+  <script type="text/javascript">
+  function choixOrdi(){
+    var ordi = parseInt(Math.random()*3);
+    var choix = prompt("choississez Pierre Papier ou Ciseaux");
+    if (ordi == 0){
+      var pr = "Pierre";
+      alert("l'ordinateur choissis Pierre");
+      if(choix.toLowerCase() == "pierre" ){
+        alert("Even");
+      }
+      else if (choix.toLowerCase() == "papier") {
+        alert("You won");
+      }
+      else if (choix.toLowerCase() == "ciseaux"){
+        alert("You lose");
+      }
+      else {
+        alert("Écrivez correctement votre arme sinon vous ne pourrez pas l'utiliser! :^) ")
+      }
+    }
+    else if (ordi == 1){
+      var pa = "Papier";
+      alert("l'ordinateur choissis Papier");
+      if(choix.toLowerCase() == "pierre" ){
+        alert("You lose");
+      }
+      else if (choix.toLowerCase() == "papier") {
+        alert("Even");
+      }
+      else if (choix.toLowerCase() == "ciseaux"){
+        alert("You won");
+      }
+      else {
+        alert("Écrivez correctement votre arme sinon vous ne pourrez pas l'utiliser! :^) ")
+      }
+    }
+    else if (ordi == 2){
+      var ci = "Ciseaux";
+      alert("l'ordinateur choissis Ciseaux");
+      if(choix.toLowerCase() == "pierre" ){
+        alert("You won");
+      }
+      else if (choix.toLowerCase() == "papier") {
+        alert("You lose");
+      }
+      else if (choix.toLowerCase() == "ciseaux"){
+        alert("Even");
+      }
+      else {
+        alert("Écrivez correctement votre arme sinon vous ne pourrez pas l'utiliser! :^) ")
+      }
+    }}
+  </script>
+</body>
+</html>
