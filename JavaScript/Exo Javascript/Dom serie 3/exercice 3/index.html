@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Exercice 3</title>
+</head>
+<body>
+  <form>
+    <label for="nom">Votre nom  : </label><input onkeypress="touche();" type="text" name="nom" value="" id="nom" />
+  </form>
+  <script language="javascript">
+  function touche(){
+  	var touche = window.event ? event.keyCode : event.which;
+  	// la variable touche récupère le code de la touche du clavier
+    alert("affiche la touche"+touche);
+  }
+</script>
+</body>
+</html>
