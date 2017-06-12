@@ -10,10 +10,11 @@
 <body>
 	<h1>jQuery : Exercice 1</h1>
 	<div id="contenu">
-		<img src="jquery-logo.png" />
+		<img id="image" src="jquery-logo.png" />
 		<h2>Qu'est-ce-que jQuery ?</h2>
-		<p>jQuery est une bibliothèque <span class="rouge">JavaScript</span> libre et multi-plateforme créée pour faciliter l'écriture de <a href="https://fr.wikipedia.org/wiki/Client_Side_Scripting">scripts côté client</a> dans le code <span class="vert">HTML</span>			des pages web.</p>
-		<p>La première version est lancée en janvier 2006 par <a href="https://fr.wikipedia.org/wiki/John_Resig">John Resig</a>.</p>
+		<p>jQuery est une bibliothèque <span class="rouge">JavaScript</span> libre et multi-plateforme créée pour faciliter l'écriture de <a data-toggle="tooltip" href="https://fr.wikipedia.org/wiki/Client_Side_Scripting">scripts côté client</a> dans le code
+			<span class="vert">HTML</span> des pages web.</p>
+		<p>La première version est lancée en janvier 2006 par <a data-toggle="tooltip" href="https://fr.wikipedia.org/wiki/John_Resig">John Resig</a>.</p>
 		<h2>Que peut-on faire avec jQuery ?</h2>
 		<p>La bibliothèque contient notamment les fonctionnalités suivantes :</p>
 		<ul>
@@ -23,7 +24,7 @@
 			<li>Manipulations des feuilles de style en cascade (ajout/suppression des classes, d'attributs…) ;</li>
 			<li><span class="vert">AJAX</span> ;</li>
 			<li>Plugins ;</li>
-			<li>Utilitaires (version du <a href="https://fr.wikipedia.org/wiki/Navigateur_web">navigateur web</a>,...).</li>
+			<li>Utilitaires (version du <a data-toggle="tooltip" href="https://fr.wikipedia.org/wiki/Navigateur_web">navigateur web</a>,...).</li>
 		</ul>
 	</div>
 
@@ -45,30 +46,47 @@
 		$(document).ready(function() {
 			/* agrandir la police de caractères (120%) */
 			$("ol > li:first").click(function() {
-				$("body").stop().animate({fontSize: '+=1px'},300);
+				$("body").stop().animate({
+					fontSize: '+=1px'
+				}, 300);
 			});
 			/* diminuer la police de caractères (80%) */
 			$("ol > li:nth-child(2)").click(function() {
-				$("body").stop().animate({fontSize: '-=1px'},300);
+				$("body").stop().animate({
+					fontSize: '-=1px'
+				}, 300);
 			});
 			/* mettre en gras ou remettre en normal les mots en vert */
-			$("ol > li:nth-child(3)").click(function(){
-				$(".vert").css("font-weight", "bold")
-			});
-			$("ol > li:nth-child(3)").click(function(){
-				$(".vert").css("font-weight", "normal")
-			});
-
+			$("ol > li:nth-child(3)").toggle(function() {
+					$(".vert").css("font-weight", "bold");
+				},
+				function() {
+					$(".vert").css("font-weight", "normal");
+				});
 			/* souligner ou remettre en normal les mots en rouge */
-
-
+			$("ol > li:nth-child(4)").toggle(function() {
+					$(".rouge").css("text-decoration", "underline");
+				},
+				function() {
+					$(".rouge").css("text-decoration", "none");
+				});
 			/* remplacer le logo par une autre image au survol */
-
-
+			$("img").mouseenter(function() {
+				jQuery(this).attr("src", "koala.jpg");
+			});
+			$("#image").mouseout(function() {
+				$("#image").attr("src", "jquery-logo.png");
+			});
 			/* Afficher l'URL des liens dans une infobulle lors du survol des liens */
-
+			$("a").attr("title", function() {
+				$(this).attr("href");
+			});
 			/* ajouter "Chapitre 1 :" devant le 1er titre h2<br>et "Chapitre 2 :" devant le 2ème titre h2 */
-
+			$("ol > nth-child(7)").click(function() {
+				$("h2").each(function() {
+					$("h2").prepend("Chapitre" + (i + 1));
+				});
+			});
 		});
 	</script>
 </body>

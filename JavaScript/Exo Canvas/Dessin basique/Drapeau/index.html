@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="monDrapeau" width="600" height="600">
+  </canvas>
+  <script type="text/javascript">
+    var c = document.getElementById("monDrapeau");
+    var ctx = c.getContext("2d");
+
+    //baton plus drapeau
+    ctx.beginPath()
+    ctx.lineWidth = 2;
+    ctx.strokeRect(100, 100, 5, 480);
+    ctx.strokeRect(105, 100, 300, 200);
+    ctx.closePath()
+
+    //1er séparation
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.fillRect(105,100,100,200);
+    ctx.closePath();
+    //éieme séparation
+    ctx.beginPath();
+    ctx.fillStyle = "blue";
+    ctx.fillRect(205,100,100,200);
+    ctx.closePath();
+    //3ieme séparation
+    ctx.beginPath();
+    ctx.fillStyle= "green";
+    ctx.fillRect(305,100,100,200);
+    ctx.closePath();
+
+
+
+  </script>
+
+</body>
+</html>

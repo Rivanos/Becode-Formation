@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="monBateau" width="600" height="600">
+  </canvas>
+  <script type="text/javascript">
+    var c = document.getElementById("monBateau");
+    var ctx = c.getContext("2d");
+
+
+
+
+    ctx.beginPath();
+    ctx.fillStyle = "rgb(75, 49, 10)";
+    ctx.fillRect(295, 30, 10, 350);
+    ctx.closePath();
+
+
+    ctx.beginPath();
+    ctx.moveTo(100, 475);
+    ctx.lineTo(500, 475);
+    ctx.lineTo(540, 400);
+    ctx.lineTo(60, 400);
+    ctx.lineTo(140, 475);
+    ctx.strokeRect(60, 400, 480, -20)
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "rgb(33, 225, 231)";
+    ctx.fillRect(0, 450, 600, 150);
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "rgb(75, 49, 10)";
+    ctx.fillRect(305, 340, 250, 10);
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.moveTo(305, 30);
+    ctx.lineTo(305, 320);
+    ctx.lineTo(540, 320);
+    ctx.lineTo(305, 30);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(400,40, 30,0,2*Math.PI,);
+    ctx.arc(430,40, 24,0,2*Math.PI);
+    ctx.arc(460,40, 22,0,2*Math.PI);
+    ctx.arc(490,40, 29,0,2*Math.PI);
+    ctx.arc(520,40, 36,0,2*Math.PI);
+    ctx.arc(550,40, 20,0,2*Math.PI);
+    ctx.fillStyle="rgb(201, 189, 186)";
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(400,50, 28,0,2*Math.PI,);
+    ctx.arc(430,50, 29,0,2*Math.PI);
+    ctx.arc(460,50, 40,0,2*Math.PI);
+    ctx.arc(490,50, 32,0,2*Math.PI);
+    ctx.arc(520,50, 31,0,2*Math.PI);
+    ctx.arc(550,50, 25,0,2*Math.PI);
+    ctx.fillStyle="rgb(201, 189, 186)";
+    ctx.fill();
+    ctx.closePath();
+
+//    ctx.beginPath();
+//    ctx.arc(100,60, 40,0,2*Math.PI,);
+//    ctx.arc(130,60, 34,0,2*Math.PI);
+//    ctx.arc(160,60, 32,0,2*Math.PI);
+//    ctx.arc(190,60, 39,0,2*Math.PI);
+//    ctx.arc(220,60, 46,0,2*Math.PI);
+
+//    ctx.arc(250,60, 30,0,2*Math.PI);
+//    ctx.fillStyle="rgb(201, 189, 186)";
+//    ctx.fill();
+//    ctx.closePath();
+
+//    ctx.beginPath();
+//    ctx.arc(100,70, 38,0,2*Math.PI,);
+//    ctx.arc(130,70, 39,0,2*Math.PI);
+//    ctx.arc(160,70, 50,0,2*Math.PI);
+//    ctx.arc(190,70, 42,0,2*Math.PI);
+//    ctx.arc(220,70, 41,0,2*Math.PI);
+//    ctx.arc(250,70, 35,0,2*Math.PI);
+//    ctx.fillStyle="rgb(201, 189, 186)";
+//    ctx.fill();
+//    ctx.closePath();
+
+
+    ctx.beginPath();
+    ctx.moveTo(100,100);
+    ctx.bezierCurveTo(50,60,150,50,180,60);
+    ctx.bezierCurveTo(250,40,320,50,250,95);
+    ctx.bezierCurveTo(300,100,400,125,275,120);
+    ctx.bezierCurveTo(300,150,250,150,200,135);
+    ctx.bezierCurveTo(150,150,50,125,100,100);
+    ctx.fillStyle="rgb(147, 153, 168)";
+    ctx.fill();
+    ctx.closePath();
+  </script>
+</body>
+
+</html>
