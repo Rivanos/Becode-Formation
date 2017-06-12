@@ -1,5 +1,7 @@
 # Becode-Formation
 
+It's a repo for all exercices, projects and IT works that i did while i was in formation at becode.org
+
 ## Table des matières:
 
 1. [Prairie](https://github.com/Rivanos/Becode-Formation/tree/master/Prairie)
