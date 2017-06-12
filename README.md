@@ -10,6 +10,8 @@ It's a repo for all exercices, projects and IT works that i did while i was in f
 4. [Exo Media query](https://github.com/Rivanos/Becode-Formation/tree/master/Exo-Media%20querries)
 5. [Site bootstrap](https://github.com/Rivanos/Becode-Formation/tree/master/Projet-Bootsrtap-sushi-house)
 6. [Exo Javascript](https://github.com/Rivanos/Becode-Formation/tree/master/JavaScript/Exo%20Javascript)
+7. [Exo Jquery](https://github.com/Rivanos/Becode-Formation/tree/master/JavaScript/Exo%20JQuery)
+8. [Exo js canvas](https://github.com/Rivanos/Becode-Formation/tree/master/JavaScript/Exo%20Canvas/Dessin%20basique)
 
 ### Table des exo importants: 
 
