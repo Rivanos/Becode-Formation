@@ -17,80 +17,30 @@ if (isset($_POST["mois"]) && isset($_POST["annee"])) {
   // NOTE: retourne le nom du premier jour du mois.
   $jd=gregoriantojd($mois ,1, $annee);
   $nomDuPremierJourDuMois = jddayofweek($jd,1);
+  echo $nomDuPremierJourDuMois;
+  // NOTE: retourne le nombre de jour divisé par 7
+  $nbDe7 = floor($nbDeJourDansLeMois/7)+1;
 }
 else {
   echo "<p>Choisis une date</p>";
 }
-$jourdelasemaine = [
-  "lundi",
-    "mardi",
-      "mercredi",
-        "jeudi",
-          "vendredi",
-            "samedi",
-              "dimanche",
-];
-$moisdannée = [
- 1,
-  2,
-   3,
-    4,
-     5,
-      6,
-       7,
-        8,
-         9,
-          10,
-           11,
-            12
-];
-$numerosemaine = [
- 1,
-  2,
-   3,
-    4,
-     5,
-      6,
-       7,
-        8,
-         9,
-          10,
-           11,
-            12,
-             13,
-              14,
-               15,
-                16,
-                 17,
-                  18,
-                   19,
-                    20,
-                     21,
-                      22,
-                       23,
-                        24,
-                         25,
-                          26,
-                           27,
-                            28,
-                             29,
-                              30,
-                               31,
-];
-$moisdeLannée = [
-'Janvier',
- 'Février',
-  'Mars',
-   'Avril',
-    'Mai',
-     'Juin',
-      'Juillet',
-       'Août',
-        'Septembre',
-         'Octobre',
-          'Novembre',
-           'Décembre'
-         ];
+$Monday = "Monday";
+$Tuesday = "Tuesday";
+$Wednesday = "Wednesday";
+$Thursday = "Thursday";
+$Friday = "Friday";
+$Saturday = "Saturday";
+$Sunday = "Sunday";
+$jourdelasemaine = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche",];
+$numerosemaine = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+$numerosemaineLun = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+$numerosemaineMar = ["",1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+$numerosemaineMer = ["", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+$numerosemaineJeu = ["" , "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+$numerosemaineVen = ["", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+$numerosemaineSam = ["", "", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+$numerosemaineDim = ["", "", "", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+$moisdeLannée = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre',   'Octobre','Novembre','Décembre'];
 
 ?>
 <!DOCTYPE html>
@@ -102,9 +52,7 @@ $moisdeLannée = [
     table, td, tr {
       border: 2px solid black;
       padding: 1em;
-    }
-      .center {
-        text-align: center;
+      text-align: center;
       }
     </style>
   </head>
@@ -127,33 +75,47 @@ $moisdeLannée = [
       <button type="submit" name="button" value="">Clique pour POST</button>
     </form>
     <table>
-  </head>
       <thead>
-          <tr>
-            <td class="center" colspan="7"><?= $nbDuMois." ".$annee ?></td>
-          </tr>
+        <td colspan="7"> <?= $nbDuMois." ".$annee?></td>
       </thead>
       <tbody>
         <tr>
-          <?php
-              for ($i=0; $i < 7; $i++) { ?>
-              <td><?= $jourdelasemaine[$i] ?></td>
-            <?php  }  ?>
+          <?php for ($i=0; $i < 7; $i++) { ?>
+            <td><?= $jourdelasemaine[$i] ?></td>
+        <?php  } ?>
         </tr>
-        <?php for ($i=0; $i < 6; $i++) { ?>
-          <tr>
-            <?php for ($i=1; $i < $numerosemaine; $i++) { ?>
-              <td></td>
-          <?php  } ?>
-          </tr>
-      <?php  } ?>
-        <?php /*<?php for ($i=0; $i < 6; $i++) { ?>
-              <tr>
-                <?php for ($i=1; $i < 6; $i++) { ?>
-                    <td><?= $i ?></td>
-              <?php  } ?>
-              </tr>
-      <?php  } ?>*/ ?>
+        <tr>
+        <?php
+          switch ($nomDuPremierJourDuMois) {
+            case 'Monday':
+
+              break;
+            case 'Tuesday':
+
+              break;
+            case 'Wednesday':
+                  for ($i=0; $i < $nbDeJourDansLeMois ; $i++) { ?>
+                    <td><?= $numerosemaineMer[$i] ?></td>
+                  <?php }
+              break;
+            case 'Thursday':
+
+              break;
+            case 'Friday':
+
+              break;
+            case 'Saturday':
+
+              break;
+            case 'Sunday':
+
+              break;
+            default:
+
+              break;
+          }
+          ?>
+        </tr>
       </tbody>
     </table>
   </body>
