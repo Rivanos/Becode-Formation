@@ -1,4 +1,5 @@
 <?php
+$nomDuPremierJourDuMois = "";
   // NOTE:
 if (isset($_POST["mois"]) && isset($_POST["annee"])) {
   $mois = $_POST["mois"];
@@ -13,34 +14,60 @@ if (isset($_POST["mois"]) && isset($_POST["annee"])) {
   // NOTE: retourne le nombre de jour dans le mois + 1
   $nbDeJourDansLeMoisfor = jour($mois, $annee) + 1;
   // NOTE: retourne le nom du mois choisis
-  $nbDuMois = jdmonthname($mois , CAL_GREGORIAN);
-  // NOTE: retourne le nom du premier jour du mois.
   $jd=gregoriantojd($mois ,1, $annee);
+  $nbDuMois = jdmonthname($jd , 1);
+  // NOTE: retourne le nom du premier jour du mois.
   $nomDuPremierJourDuMois = jddayofweek($jd,1);
   echo $nomDuPremierJourDuMois;
-  // NOTE: retourne le nombre de jour divisé par 7
-  $nbDe7 = floor($nbDeJourDansLeMois/7)+1;
 }
 else {
   echo "<p>Choisis une date</p>";
 }
-$Monday = "Monday";
-$Tuesday = "Tuesday";
-$Wednesday = "Wednesday";
-$Thursday = "Thursday";
-$Friday = "Friday";
-$Saturday = "Saturday";
-$Sunday = "Sunday";
 $jourdelasemaine = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche",];
-$numerosemaine = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-$numerosemaineLun = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
-$numerosemaineMar = ["",1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
-$numerosemaineMer = ["", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
-$numerosemaineJeu = ["" , "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
-$numerosemaineVen = ["", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
-$numerosemaineSam = ["", "", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
-$numerosemaineDim = ["", "", "", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
-$moisdeLannée = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre',   'Octobre','Novembre','Décembre'];
+$moisdannée = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+// NOTE: liste des jour du mois si 31 jours dans le mois.
+
+$numerosemaineLun31 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+$numerosemaineMar31 = ["",1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+$numerosemaineMer31 = ["", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+$numerosemaineJeu31 = ["" , "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+$numerosemaineVen31 = ["", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+$numerosemaineSam31 = ["", "", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+$numerosemaineDim31 = ["", "", "", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30, 31];
+
+// NOTE: liste des jour du mois si 30 jours dans le mois.
+
+$numerosemaineLun30 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30];
+$numerosemaineMar30 = ["",1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30];
+$numerosemaineMer30 = ["", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30];
+$numerosemaineJeu30 = ["" , "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30];
+$numerosemaineVen30 = ["", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30];
+$numerosemaineSam30 = ["", "", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30];
+$numerosemaineDim30 = ["", "", "", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29, 30];
+
+// NOTE: liste des jour du mois si 29 jours dans le mois.
+
+$numerosemaineLun29 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29];
+$numerosemaineMar29 = ["",1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29];
+$numerosemaineMer29 = ["", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29];
+$numerosemaineJeu29 = ["" , "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29];
+$numerosemaineVen29 = ["", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29];
+$numerosemaineSam29 = ["", "", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29];
+$numerosemaineDim29 = ["", "", "", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28, 29];
+
+// NOTE: liste des jour du mois si 28 jours dans le mois.
+
+$numerosemaineLun28 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28];
+$numerosemaineMar28 = ["",1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28];
+$numerosemaineMer28 = ["", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28];
+$numerosemaineJeu28 = ["" , "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28];
+$numerosemaineVen28 = ["", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28];
+$numerosemaineSam28 = ["", "", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28];
+$numerosemaineDim28 = ["", "", "", "", "", "", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,  25, 26, 27, 28];
+
+
+$moisdeLannée = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
 
 ?>
 <!DOCTYPE html>
@@ -74,6 +101,7 @@ $moisdeLannée = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Ao
       </select>
       <button type="submit" name="button" value="">Clique pour POST</button>
     </form>
+    <?php if (isset($_POST["mois"]) && isset($_POST["annee"])){ ?>
     <table>
       <thead>
         <td colspan="7"> <?= $nbDuMois." ".$annee?></td>
@@ -88,35 +116,250 @@ $moisdeLannée = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Ao
         <?php
           switch ($nomDuPremierJourDuMois) {
             case 'Monday':
-
+                if ($nbDeJourDansLeMois == 31) {
+                      for ($i=0; $i < 7 ; $i++) {
+                        for ($i=0; $i < count($numerosemaineLun31) ; $i++) { ?>
+                          <td><?php echo $numerosemaineLun31[$i] ?></td>
+                      <?php if ($numerosemaineLun31[$i] % 7 == 0 ) {?>
+                      </tr><tr>
+                    <?php  }}}
+                }
+                elseif ($nbDeJourDansLeMois == 30) {
+                      for ($i=0; $i < 7 ; $i++) {
+                        for ($i=0; $i < count($numerosemaineLun30) ; $i++) { ?>
+                          <td><?php echo $numerosemaineLun30[$i] ?></td>
+                      <?php if ($numerosemaineLun30[$i] % 7 == 0 ) {?>
+                      </tr><tr>
+                    <?php  }}}
+                }
+                elseif ($nbDeJourDansLeMois == 29) {
+                      for ($i=0; $i < 7 ; $i++) {
+                        for ($i=0; $i < count($numerosemaineLun29) ; $i++) { ?>
+                          <td><?php echo $numerosemaineLun29[$i] ?></td>
+                      <?php if ($numerosemaineLun29[$i] % 7 == 0 ) {?>
+                      </tr><tr>
+                    <?php  }}}
+                }
+                elseif ($nbDeJourDansLeMois == 28) {
+                      for ($i=0; $i < 7 ; $i++) {
+                        for ($i=0; $i < count($numerosemaineLun28) ; $i++) { ?>
+                          <td><?php echo $numerosemaineLun28[$i] ?></td>
+                      <?php if ($numerosemaineLun28[$i] % 7 == 0 ) {?>
+                      </tr><tr>
+                    <?php  }}}
+                }
               break;
             case 'Tuesday':
-
+            if ($nbDeJourDansLeMois == 31) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineMar31) ; $i++) { ?>
+                      <td><?php echo $numerosemaineMar31[$i] ?></td>
+                  <?php if ($numerosemaineMar31[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 30) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineMar30) ; $i++) { ?>
+                      <td><?php echo $numerosemaineMar30[$i] ?></td>
+                  <?php if ($numerosemaineMar30[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 29) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineMar29) ; $i++) { ?>
+                      <td><?php echo $numerosemaineMar29[$i] ?></td>
+                  <?php if ($numerosemaineMar29[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 28) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineMar28) ; $i++) { ?>
+                      <td><?php echo $numerosemaineMar28[$i] ?></td>
+                  <?php if ($numerosemaineMar28[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
               break;
             case 'Wednesday':
-                  for ($i=0; $i < $nbDeJourDansLeMois ; $i++) { ?>
-                    <td><?= $numerosemaineMer[$i] ?></td>
-                  <?php }
+            if ($nbDeJourDansLeMois == 31) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineMer31) ; $i++) { ?>
+                      <td><?php echo $numerosemaineMer31[$i] ?></td>
+                  <?php if ($numerosemaineVen31[$i] == 5 || $numerosemaineVen31[$i] == 12 || $numerosemaineVen31[$i] == 19 || $numerosemaineVen31[$i] == 26) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 30) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineMer30) ; $i++) { ?>
+                      <td><?php echo $numerosemaineMer30[$i] ?></td>
+                  <?php if ($numerosemaineVen31[$i] == 5 || $numerosemaineVen31[$i] == 12 || $numerosemaineVen31[$i] == 19 || $numerosemaineVen31[$i] == 26) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 29) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineMer29) ; $i++) { ?>
+                      <td><?php echo $numerosemaineMer29[$i] ?></td>
+                  <?php if ($numerosemaineVen31[$i] == 5 || $numerosemaineVen31[$i] == 12 || $numerosemaineVen31[$i] == 19 || $numerosemaineVen31[$i] == 26) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 28) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineMer28) ; $i++) { ?>
+                      <td><?php echo $numerosemaineMer28[$i] ?></td>
+                  <?php if ($numerosemaineVen31[$i] == 5 || $numerosemaineVen31[$i] == 12 || $numerosemaineVen31[$i] == 19 || $numerosemaineVen31[$i] == 26) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
               break;
             case 'Thursday':
-
+            if ($nbDeJourDansLeMois == 31) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineJeu31) ; $i++) { ?>
+                      <td><?php echo $numerosemaineJeu31[$i] ?></td>
+                  <?php if ($numerosemaineJeu31[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 30) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineJeu30) ; $i++) { ?>
+                      <td><?php echo $numerosemaineJeu30[$i] ?></td>
+                  <?php if ($numerosemaineJeu30[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 29) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineJeu29) ; $i++) { ?>
+                      <td><?php echo $numerosemaineJeu29[$i] ?></td>
+                  <?php if ($numerosemaineJeu29[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 28) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineJeu28) ; $i++) { ?>
+                      <td><?php echo $numerosemaineJeu28[$i] ?></td>
+                  <?php if ($numerosemaineJeu28[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
               break;
             case 'Friday':
-
+            if ($nbDeJourDansLeMois == 31) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineVen31) ; $i++) { ?>
+                      <td><?php echo $numerosemaineVen31[$i] ?></td>
+                  <?php if ($numerosemaineVen31[$i] == 3 || $numerosemaineVen31[$i] == 10 || $numerosemaineVen31[$i] == 17 || $numerosemaineVen31[$i] == 24 || $numerosemaineVen31[$i] == 31) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 30) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineVen30) ; $i++) { ?>
+                      <td><?php echo $numerosemaineVen30[$i] ?></td>
+                  <?php if ($numerosemaineVen31[$i] == 3 || $numerosemaineVen31[$i] == 10 || $numerosemaineVen31[$i] == 17 || $numerosemaineVen31[$i] == 24 || $numerosemaineVen31[$i] == 31) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 29) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineVen29) ; $i++) { ?>
+                      <td><?php echo $numerosemaineVen29[$i] ?></td>
+                  <?php if ($numerosemaineVen31[$i] == 3 || $numerosemaineVen31[$i] == 10 || $numerosemaineVen31[$i] == 17 || $numerosemaineVen31[$i] == 24 || $numerosemaineVen31[$i] == 31) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 28) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineVen28) ; $i++) { ?>
+                      <td><?php echo $numerosemaineVen28[$i] ?></td>
+                  <?php if ($numerosemaineVen31[$i] == 3 || $numerosemaineVen31[$i] == 10 || $numerosemaineVen31[$i] == 17 || $numerosemaineVen31[$i] == 24 || $numerosemaineVen31[$i] == 31) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
               break;
             case 'Saturday':
-
+            if ($nbDeJourDansLeMois == 31) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineSam31) ; $i++) { ?>
+                      <td><?php echo $numerosemaineSam31[$i] ?></td>
+                  <?php if ($numerosemaineSam31[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 30) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineSam30) ; $i++) { ?>
+                      <td><?php echo $numerosemaineSam30[$i] ?></td>
+                  <?php if ($numerosemaineSam30[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 29) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineSam29) ; $i++) { ?>
+                      <td><?php echo $numerosemaineSam29[$i] ?></td>
+                  <?php if ($numerosemaineSam29[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 28) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineSam28) ; $i++) { ?>
+                      <td><?php echo $numerosemaineSam28[$i] ?></td>
+                  <?php if ($numerosemaineSam28[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
               break;
             case 'Sunday':
-
+            if ($nbDeJourDansLeMois == 31) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineDim31) ; $i++) { ?>
+                      <td><?php echo $numerosemaineDim31[$i] ?></td>
+                  <?php if ($numerosemaineVen31[$i] == 1 || $numerosemaineVen31[$i] == 8 || $numerosemaineVen31[$i] == 15 || $numerosemaineVen31[$i] == 22 || $numerosemaineVen31[$i] == 29) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 30) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineDim30) ; $i++) { ?>
+                      <td><?php echo $numerosemaineDim30[$i] ?></td>
+                  <?php if ($numerosemaineDim30[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 29) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineDim29) ; $i++) { ?>
+                      <td><?php echo $numerosemaineDim29[$i] ?></td>
+                  <?php if ($numerosemaineDim29[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
+            elseif ($nbDeJourDansLeMois == 28) {
+                  for ($i=0; $i < 7 ; $i++) {
+                    for ($i=0; $i < count($numerosemaineDim28) ; $i++) { ?>
+                      <td><?php echo $numerosemaineDim28[$i] ?></td>
+                  <?php if ($numerosemaineDim28[$i] % 7 == 0 ) {?>
+                  </tr><tr>
+                <?php  }}}
+            }
               break;
             default:
-
+              echo "Veuillez réayssez s'il vous plait.";
               break;
           }
           ?>
-        </tr>
       </tbody>
     </table>
+    <?php } ?>
   </body>
 </html>
